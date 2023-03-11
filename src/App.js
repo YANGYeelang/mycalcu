@@ -4,28 +4,28 @@ import { Box, Button, Container, TextField, Typography } from '@mui/material';
 function App() {
   var [value, setValue] = useState('');
   let [output, setOutput] = useState(0);
-  let restrvalue = value.replace(/\s/g, '');
+  const restrvalue = value.replace(/\s/g, '');
   function Cacul() {
     for (let i = 0; i < restrvalue.length; i++) {
-      let newVlaue = restrvalue[i];
-      if (newVlaue === '+') {
+      const newValue = restrvalue[i];
+      if (newValue === '+') {
         let rnum = parseFloat(restrvalue.slice(0, i));
         let lnum = parseFloat(restrvalue.slice(i + 1, restrvalue.length));
         setOutput(rnum + lnum);
-      } else if (newVlaue === '-') {
+      } else if (newValue === '-') {
         let rnum = parseFloat(restrvalue.slice(0, i));
         let lnum = parseFloat(restrvalue.slice(i + 1, restrvalue.length));
         setOutput(rnum - lnum);
-      } else if (newVlaue === 'x') {
+      } else if (newValue === 'x') {
         let rnum = parseFloat(restrvalue.slice(0, i));
         let lnum = parseFloat(restrvalue.slice(i + 1, restrvalue.length));
         setOutput(rnum * lnum);
-      } else if (newVlaue === '/') {
+      } else if (newValue === '/') {
         let rnum = parseFloat(restrvalue.slice(0, i));
         let lnum = parseFloat(restrvalue.slice(i + 1, restrvalue.length));
         setOutput(rnum / lnum);
       } else {
-        console.log('Invalid operand or wrong input');
+        console.log('Iput should include operand');
       }
     }
   }
